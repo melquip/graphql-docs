@@ -88,7 +88,7 @@ function writeToOutput(result) {
             ${distScript}
             function fetcher() {
                 return new Promise(function(resolve) {
-                    resolve('${result}');
+                    resolve(${escape(result)});
                 });
             }
 
