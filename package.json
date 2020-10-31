@@ -7,12 +7,11 @@
   "license": "SEE LICENSE IN LICENSE",
   "files": [
     "dist/",
-    "lib/",
     "README.rst",
     "LICENSE"
   ],
   "bin": {
-    "graphql-docs-gen": "lib/generator.js"
+    "graphql-docs-gen": "src/generator.js"
   },
   "scripts": {
     "test": "echo 'No tests yet :-('",
@@ -26,13 +25,13 @@
     "docs",
     "documentation"
   ],
-  "homepage": "https://github.com/mhallin/graphql-docs",
+  "homepage": "https://github.com/melquip/graphql-docs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mhallin/graphql-docs.git"
+    "url": "https://github.com/melquip/graphql-docs.git"
   },
   "bugs": {
-    "url": "https://github.com/mhallin/graphql-docs/issues"
+    "url": "https://github.com/melquip/graphql-docs/issues"
   },
   "engines": {
     "node": ">= 4.4.0"
