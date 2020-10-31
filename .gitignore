@@ -1,6 +1,5 @@
 /node_modules
 /example/dist
 /example/node_modules
-/lib
 .idea
 index.html
