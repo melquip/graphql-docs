@@ -73,37 +73,36 @@ function writeToOutput(result) {
         }
     }
 
-    outputStream.write(`
-        <!DOCTYPE html>
-        <html>
-            <head>
-                <title>GraphQL Docs</title>
-                <meta charset="utf-8">
-            </head>
-            <body>
-                <div id="app"></div>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react-dom.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
-                <script>
-                    ${distScript}
-                    function fetcher() {
-                        return new Promise(function(resolve) {
-                            resolve(${JSON.stringify(result)});
-                        });
-                    }
+    outputStream.write(`<!DOCTYPE html>
+<html>
+    <head>
+        <title>GraphQL Docs</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div id="app"></div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react-dom.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
+        <script>
+            ${distScript}
+            function fetcher() {
+                return new Promise(function(resolve) {
+                    resolve(${result});
+                });
+            }
 
-                    const rootElem = document.getElementById("app");
-                    ReactDOM.render(
-                        React.createElement(
-                            GraphQLDocs.GraphQLDocs,
-                            {
-                                fetcher: fetcher,
-                            }),
-                        rootElem
-                    );
-                </script>
-            </body>
-        </html>
-    `);
+            const rootElem = document.getElementById("app");
+            ReactDOM.render(
+                React.createElement(
+                    GraphQLDocs.GraphQLDocs,
+                    {
+                        fetcher: fetcher,
+                    }),
+                rootElem
+            );
+        </script>
+    </body>
+</html>
+`);
 }
