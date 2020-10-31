@@ -7,11 +7,12 @@
   "license": "SEE LICENSE IN LICENSE",
   "files": [
     "dist/",
+    "lib/",
     "README.rst",
     "LICENSE"
   ],
   "bin": {
-    "graphql-docs-gen": "src/generator.js"
+    "graphql-docs-gen": "lib/generator.js"
   },
   "scripts": {
     "test": "echo 'No tests yet :-('",
