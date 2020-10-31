@@ -54,6 +54,7 @@ if (input === '-') {
 }
 
 function writeToOutput(result) {
+    console.info('writeToOutput', result);
     const outputStream = output
         ? fs.createWriteStream(output, {defaultEncoding: 'utf-8'})
         : process.stdout;
