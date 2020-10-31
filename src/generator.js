@@ -78,22 +78,22 @@ function writeToOutput(result) {
         <html>
             <head>
                 <title>GraphQL Docs</title>
-                <meta charset='utf-8'>
-                <script defer src='https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react.js'></script>
-                <script defer src='https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react-dom.js'></script>
-                <script defer src='https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js'></script>
-                <script defer>${distScript}</script>
+                <meta charset="utf-8">
             </head>
             <body>
-                <div id='app'></div>
-                <script defer>
+                <div id="app"></div>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react-dom.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
+                <script>
+                    ${distScript}
                     function fetcher() {
                         return new Promise(function(resolve) {
                             resolve(${JSON.stringify(result)});
                         });
                     }
 
-                    const rootElem = document.getElementById('app');
+                    const rootElem = document.getElementById("app");
                     ReactDOM.render(
                         React.createElement(
                             GraphQLDocs.GraphQLDocs,
