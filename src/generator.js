@@ -87,8 +87,8 @@ function writeToOutput(result) {
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react-dom.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
+                <script>${distScript}</script>
                 <script>
-                    ${distScript}
                     function fetcher() {
                         return new Promise(function(resolve) {
                             resolve(${JSON.stringify(result)});
